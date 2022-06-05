@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    <title>스파르타코딩클럽 | 부트스트랩 연습하기</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Nanum Myeongjo', serif;
+        }
+        .wrap {
+            max-width: 1200px;
+            width: 95%;
+            margin: 20px auto 0 auto;
+        }
+         .mytitle{
+            width:100%;
+            height:250px;
+
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://file.mk.co.kr/meet/neds/2021/03/image_readtop_2021_198169_16146360614555129.jpg");
+            background-size:cover;
+            background-position: center 40%;
+
+            color:white;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+         .mypost {
+             max-width: 500px;
+             width: 95%;
+
+             margin: 20px auto 0 auto;
+
+             box-shadow: 0px 0px 3px 0px gray;
+             padding: 20px;
+         }
+         .mypost > button {
+             margin-top : 15px;
+         }
+         .mycards {
+             max-width: 500px;
+             width: 95%;
+
+             margin: 20px auto 0 auto;
+         }
+         .mycards > .card {
+             margin-top: 10px;
+             margin-bottom: 10px;
+         }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                type: "GET",
+                url: "http://spartacodingclub.shop/sparta_api/weather/goyang",
+                data: {},
+                success: function (response) {
+                    let ondo = response['temp']
+                    $('#temp').text(ondo)
+                }
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <div class="mytitle">
+        <h1>권진아 팬명록</h1>
+        <p>현재 기온 : <span id="temp">00.0도</span> </p>
+    </div>
+    <div class="wrap">
+        <div class="mypost">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">닉네임</label>
+            </div>
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                          style="height: 100px"></textarea>
+                <label for="floatingTextarea2">응원댓글</label>
+            </div>
+            <button type="button" class="btn btn-dark">응원 남기기</button>
+        </div>
+        <div class="mycards">
+            <div class="card">
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p>새로운 앨범 너무 멋져요! 나 왜 콘서트 티켓 없어</p>
+                        <footer class="blockquote-footer">식빵맨</footer>
+                    </blockquote>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p>새로운 앨범 너무 멋져요! 나 왜 콘서트 티켓 없어</p>
+                        <footer class="blockquote-footer">식빵맨</footer>
+                    </blockquote>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p>새로운 앨범 너무 멋져요! 나 왜 콘서트 티켓 없어</p>
+                        <footer class="blockquote-footer">식빵맨</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
