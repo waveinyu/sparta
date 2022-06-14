@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Serif+KR&family=Poiret+One&family=Press+Start+2P&family=Shrikhand&display=swap"
+          rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    <title>waveinyu</title>
+    <link rel="icon" href="img/wave_icon.png">
+    <style>
+        * {
+            font-family: 'Noto Serif KR', serif;
+
+        }
+
+        .mytitle {
+            width: 100%;
+            height: 250px;
+
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.6));
+            background-color: darkslateblue;
+            background-position: center;
+            background-size: cover;
+
+            color: white;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            /*margin: 5px 5px 5px 5px*/
+        }
+
+        .mytitle > button {
+            width: 200px;
+            height: 30px;
+
+            background-color: transparent;
+            color: transparent;
+
+            border-radius: 100px;
+            border: 1px solid transparent;
+
+            margin-top: 10px;
+        }
+
+        img {
+            height: 23px;
+            width: 23px;
+        }
+
+        .mytitle > img {
+            transition: all 0.2s linear;
+        }
+
+        .mytitle > button:hover {
+            transform: scale(1.2);
+
+        }
+
+        .upload {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .upload > button {
+            padding-left: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+<div class="mytitle">
+    <h1>필사록</h1>
+    <button onclick="open_box()">
+        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/whatsapp/326/black-nib_2712-fe0f.png">
+    </button>
+</div>
+<div class="upload">
+    <form method="post" entype="multipart/form-data">
+        <div class="button">
+            <label for="chooseFile"></label>
+        </div>
+        <input type="file" id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this)">
+    </form>
+
+</div>
+</body>
+
+</html>
